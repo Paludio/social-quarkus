@@ -17,9 +17,9 @@ create table posts (
 );
 
 create table followers (
-    id bigint not null primary key auto_increment,
-    user_id integer not null,
-    follower_id integer not null,
+    id bigint auto_increment not null primary key,
+    user_id bigint not null,
+    follower_id bigint not null,
     foreign key (user_id) references users(id),
     foreign key (follower_id) references users(id)
 )
